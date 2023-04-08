@@ -1,6 +1,7 @@
 package chosun.community;
 
 import chosun.community.domain.member.Member;
+import chosun.community.domain.member.MemberRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -9,6 +10,8 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class TestInitData {
 
+    private final MemberRepository memberRepository;
+
     @PostConstruct
     public void init() {
         Member member = Member.builder()
@@ -16,6 +19,8 @@ public class TestInitData {
                 .name("1")
                 .password("1")
                 .build();
+
+        memberRepository.save(member);
 
     }
 }
