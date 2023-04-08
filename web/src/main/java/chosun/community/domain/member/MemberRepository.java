@@ -10,4 +10,7 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
 
     @Query("SELECT m FROM Member m WHERE m.loginId = :loginId")
     Optional<Member> findByLoginId(@Param("loginId") String loginId);
+
+    @Query("SELECT m FROM Member m WHERE m.name = :name")
+    Member findByName(@Param("name") String name);
 }

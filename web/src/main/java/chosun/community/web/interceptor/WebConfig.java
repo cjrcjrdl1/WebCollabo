@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-//@Configuration
+@Configuration
 public class WebConfig implements WebMvcConfigurer {
 
     @Override
@@ -12,7 +12,8 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addInterceptor(new LoginCheckInterceptor())
                 .order(1)
                 .addPathPatterns("/**")
-                .excludePathPatterns("/", "/login", "/logout",
-                        "/css/**", "/*.ico", "/error", "/js/**");
+                .excludePathPatterns("/","members/register", "/login",
+                        "/logout", "/css/**", "/*.ico", "/error", "/js/**",
+                        "/images/*.png");
     }
 }
