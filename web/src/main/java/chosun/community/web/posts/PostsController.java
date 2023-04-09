@@ -20,7 +20,7 @@ public class PostsController {
 
     private final PostsRepository postsRepository;
 
-    @GetMapping
+    @GetMapping()
     public String index(Model model,
                         @PageableDefault(sort = "id", direction = Sort.Direction.DESC) Pageable pageable, Member member) {
         Page<Posts> posts = postsRepository.findAll(pageable); //이후 서비스로 연결 예정
