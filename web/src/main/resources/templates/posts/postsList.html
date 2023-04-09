@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -56,24 +56,12 @@
                     <th>조회수</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbody" th:each="post : ${posts}">
                 <tr>
-                    <th>1</th>
-                    <th>title_1</th>
-                    <th>이중민</th>
-                    <th>100</th>
-                </tr>
-                <tr>
-                    <th>2</th>
-                    <th>title_2</th>
-                    <th>김윤호</th>
-                    <th>100</th>
-                </tr>
-                <tr>
-                     <th>3</th>
-                    <th>title_3</th>
-                    <th>최민영</th>
-                    <th>100</th>
+                    <td th:text="${post.id}">id</td>
+                    <td th:text="${post.title}">title</td>
+                    <td th:text="${post.member.name}">author</td>
+                    <td th:text="${post.view}">0</td>
                 </tr>
                 </tbody>
             </table>

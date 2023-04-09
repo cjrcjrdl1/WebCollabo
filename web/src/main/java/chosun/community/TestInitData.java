@@ -2,6 +2,8 @@ package chosun.community;
 
 import chosun.community.domain.member.Member;
 import chosun.community.domain.member.MemberRepository;
+import chosun.community.domain.posts.Posts;
+import chosun.community.domain.posts.PostsRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Component;
 public class TestInitData {
 
     private final MemberRepository memberRepository;
+    private final PostsRepository postsRepository;
 
     @PostConstruct
     public void init() {
@@ -22,5 +25,16 @@ public class TestInitData {
 
         memberRepository.save(member);
 
+        Posts post = Posts.builder()
+                .title("리중민 최민영 킴윤호")
+                .content("스프링")
+                .author("나")
+                .id(1L)
+                .view(1)
+                .member(member)
+                .build();
+        postsRepository.save(post);
     }
+
+
 }
