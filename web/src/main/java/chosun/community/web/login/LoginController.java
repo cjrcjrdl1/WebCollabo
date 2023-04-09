@@ -24,9 +24,7 @@ public class LoginController {
     private final LoginService loginService;
 
     @GetMapping("/login")
-    public String loginForm(@ModelAttribute("login") LoginDto loginDto) {
-        return "login/loginForm";
-    }
+    public String loginForm(@ModelAttribute("login") LoginDto loginDto) {return "login/loginForm";}
 
     @PostMapping("/login")
     public String login(@Validated @ModelAttribute("login") LoginDto login, BindingResult bindingResult,
