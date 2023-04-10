@@ -12,14 +12,17 @@
     <h10>회원 가입</h10>
     <hr>
     <p> 회원가입 정보 입력</p>
+    <form action="" th:action method="post" th:object="${member}">
     <p> ID: </p>
-    <input th:id="InsertID" type="text" placeholder="ID입력">
+    <input th:field="*{loginId}" type="text" placeholder="ID입력">
     <p> Password: </p>
-    <input th:id="InsertPass" type="text" placeholder="PASSWORD 입력">
-    <p> Password correct: </p>
-    <input th:id="InsertPassword" type="text" placeholder="PASSWORD 확인">
+    <input th:field="*{password}" type="password" placeholder="PASSWORD 입력">
+<!--    <p> Password correct: </p>-->
+<!--    <input th:id="correct" th:name="correct" type="password" placeholder="PASSWORD 확인">-->
     <p> Name: </p>
-    <input th:id="InsertName" type="text" placeholder="이름">
+    <input th:field="*{name}" type="text" placeholder="이름">
+        <button class="btn btn-primary" type="submit">전송</button>
+    </form>
 </div>
 </body>
 </html>
