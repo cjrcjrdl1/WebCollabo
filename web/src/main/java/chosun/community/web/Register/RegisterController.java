@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,12 +23,15 @@ public class RegisterController {
     private final MemberService memberService;
 
     @GetMapping("/register")
-    public String registerForm(@ModelAttribute("member")MemberRequestDto member) {
+    public String registerForm(@ModelAttribute("member") MemberRequestDto member) {
+
+
+
 //        model.addAttribute("Member_id", new joined_member());
 //        Map<String, joined_member> map = new HashMap<>();
 
 
-        return "Register/Register_Member";
+        return "register/registerMemberForm";
     }
 
     @PostMapping("/register")
