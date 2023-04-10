@@ -41,6 +41,6 @@ public class PostsController {
     @PostMapping("/create")
     public String create(writeDto data){
         System.out.println(data.toString());
-        return "";
+        return "posts/postsList";
     }
 }
