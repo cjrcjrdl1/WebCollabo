@@ -22,7 +22,7 @@ public class HomeController {
         }
 
         model.addAttribute("member", loginMember);
-        return "index";
+        return "login/loginIndex";
     }
 
 
