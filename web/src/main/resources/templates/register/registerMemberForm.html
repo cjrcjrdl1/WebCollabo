@@ -12,7 +12,7 @@
     <h10>회원 가입</h10>
     <hr>
     <p> 회원가입 정보 입력</p>
-    <form action="" th:action method="post" th:object="${member}">
+    <form action="/login" th:action method="post" th:object="${member}">
     <p> ID: </p>
     <input th:field="*{loginId}" type="text" placeholder="ID입력">
     <p> Password: </p>
