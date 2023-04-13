@@ -1,5 +1,7 @@
 package chosun.community.domain.posts;
 
+import chosun.community.domain.posts.Posts;
+import chosun.community.web.entity.PostsEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -15,4 +17,6 @@ public interface PostsRepository extends JpaRepository<Posts, Long> {
     @Modifying
     @Query("UPDATE Posts p set p.view = p.view+1 where p.id = :id")
     int updateView(@Param("id") Long id);
+
+
 }
