@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <title>종합정보시스템</title>
+</head>
+<body>
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <div class ="container">
+    <div class = "navbar-header">
+      <a class="navbar-brand" href="/">Home</a>
+    </div>
+    <div class = "navbar-header">
+      <a class="navbar-brand" href="/register">기본정보</a>
+    </div>
+    <div class = "navbar-header">
+      <a class="navbar-brand" href="/login">수강관련정보</a>
+    </div>
+  </div>
+</nav>
+<div class ="container">
+  <div class ="text-center">
+    <h3>:::: 학생정보시스템 안내 ::::</h3>
+    <p>
+    <li>로그인키 60분뒤 사라짐</li>
+    <li>학교폭력 하지 마세용</li>
+    <li>중민이 잘생김</li>
+
+    </p>
+  </div>
+</div>
+<div class="col-md text-center">
+  <div class="h-100 p-5 bg-light border rounded-3">
+    <form action="/wing/passUpdate" method = post th:object="${member}">
+
+      ID : <span th:text="*{loginId}"></span> <br>
+      name : <span th:text="*{name}"></span> <br>
+      password : <input type="password" placeholder="바꿀 패스워드 입력" th:field="*{password}"> <br>
+      <button type="submit">제출</button>
+    </form>
+  </div>
+</div>
+<hr>
+<footer class="container">
+  <p>&copy; Chosun</p>
+</footer>
+</body>
+</html>

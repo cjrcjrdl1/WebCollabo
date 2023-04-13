@@ -38,8 +38,5 @@ public class Posts {
     @JoinColumn(name = "MEMBER_ID")
     private Member member;
 
-    public void update(String title, String content) {
-        this.title = title;
-        this.content = content;
-    }
+
 }

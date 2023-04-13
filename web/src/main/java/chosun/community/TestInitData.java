@@ -36,5 +36,4 @@ public class TestInitData {
         postsRepository.save(post);
     }
 
-
 }
