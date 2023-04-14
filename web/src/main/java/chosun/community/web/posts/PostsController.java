@@ -41,6 +41,9 @@ public class PostsController {
     }
     @GetMapping("/write")
     public String writeForm(Model model){
+        model.addAttribute("title", "제목");
+        model.addAttribute("content", "내용");
+        model.addAttribute("name", "이중민");
         return "posts/postsWrite";
     }
 
