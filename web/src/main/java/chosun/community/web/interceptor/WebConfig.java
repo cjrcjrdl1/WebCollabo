@@ -1,5 +1,6 @@
 package chosun.community.web.interceptor;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -17,6 +18,7 @@ public class WebConfig implements WebMvcConfigurer {
                         "/logout", "/css/**", "/*.ico", "/error", "/js/**",
                         "/images/*.png");
     }
+
 
 
 }
